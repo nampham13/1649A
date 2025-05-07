@@ -1,0 +1,87 @@
+Main.java:
+
+The entry point of the application.
+Initializes a Scanner for user input and an OrderQueue to manage orders.
+Displays a menu with options to find products, add orders, process orders, view/search orders, and exit.
+Based on user input, it calls appropriate functions from other classes.
+function0.java:
+
+Handles product-related operations.
+Displays a menu to list all products or search for a specific product by ID.
+Uses BookDataset to fetch and display book details.
+
+function1.java:
+
+Handles the process of adding an order.
+Prompts the user to enter product ID, customer name, and quantity.
+Validates the input and checks if the product exists and if the quantity is available.
+Creates an Order object and enqueues it to the OrderQueue.
+
+function2.java:
+
+Handles the process of processing an order.
+Dequeues an order from the OrderQueue and calculates the total money for the order using calculateMoney method.
+Displays the processed order details and the total money.
+
+function3.java:
+
+Handles viewing and searching orders.
+Converts the OrderQueue to an ArrayList for sorting and searching.
+Uses OrderSorter to sort orders by book title.
+Uses OrderSearcher to search for an order by ID.
+Displays sorted orders and the search result.
+OrderQueue.java:
+
+Manages a queue of orders using a LinkedList.
+Provides methods to enqueue, dequeue, check if the queue is empty, get the size, display the queue, and get the queue as a list.
+Order.java:
+
+Represents an order with attributes like order ID, customer name, book, quantity, and price per unit.
+Provides getters for these attributes and a toString method for displaying order details.
+OrderSorter.java:
+
+Provides a quickSort method to sort orders by book title using the QuickSort algorithm.
+Uses a partition method to partition the list and a swap method to swap elements.
+OrderSearcher.java:
+
+Provides a binarySearch method to search for an order by ID using the Binary Search algorithm.
+Handles cases where the order ID is not a valid integer.
+Book.java:
+
+Represents a book with attributes like ID, title, author, price, and quantity in stock.
+Provides getters for these attributes and a toString method for displaying book details.
+BookDataset.java:
+
+Provides a static list of sample books.
+Initializes the list with some predefined books.
+Provides a method to get the sample books.
+
+Code Flow:
+
+Start Application:
+
+Main.main is called, initializing the scanner and order queue.
+Displays the main menu and waits for user input.
+Find Products:
+
+If the user selects option 0, function0.displayMenu is called.
+Displays a submenu to list all products or search for a product by ID.
+Fetches and displays book details from BookDataset.
+Add Order:
+
+If the user selects option 1, function1.processOrder is called.
+Prompts the user for product ID, customer name, and quantity.
+Validates input, creates an Order, and enqueues it to OrderQueue.
+Process Order:
+
+If the user selects option 2, function2.processOrder is called.
+Dequeues an order from OrderQueue, calculates total money, and displays order details.
+View and Search Orders:
+
+If the user selects option 3, function3.viewAndSearchOrders is called.
+
+Converts the queue to an ArrayList, sorts it using OrderSorter, and displays sorted orders.
+Searches for an order by ID using OrderSearcher and displays the result.
+Exit:
+
+If the user selects option 4, the application exits.
